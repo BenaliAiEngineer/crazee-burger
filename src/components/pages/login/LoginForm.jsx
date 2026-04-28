@@ -1,13 +1,15 @@
 import React from 'react'
 import { useState } from 'react';
+import {useNavigate} from "react-router-dom"
 
 export default function LoginForm() {
      // State (données)
             const [inputValue,setInputValue] = useState("");
+             const navigate = useNavigate();
     // Comportement
             const handleSubmit=(event)=>{
                event.preventDefault()
-               alert(`Bonjour ${inputValue} !`);
+               navigate(`/order/${inputValue}`)
                setInputValue("");
              
             }
@@ -32,3 +34,4 @@ export default function LoginForm() {
     </div>
   )
 }
+
